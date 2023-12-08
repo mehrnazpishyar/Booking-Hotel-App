@@ -16,7 +16,8 @@ import {
 } from "react-router-dom";
 
 const Header = () => {
-  const [destination, setDestination] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [destination, setDestination] = useState(searchParams.get("destination") || "");
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -34,7 +35,7 @@ const Header = () => {
 
   const [openDate, setOpenDate] = useState(false);
   const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
+
 
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
@@ -51,7 +52,7 @@ const Header = () => {
       destination,
       options: JSON.stringify(options),
     });
-    setSearchParams(encodedParams);
+    // setSearchParams(encodedParams);
     navigate({
       pathname: "/hotels",
       search: encodedParams.toString(),
