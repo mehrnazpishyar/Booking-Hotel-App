@@ -9,6 +9,11 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 const Header = () => {
   const [destination, setDestination] = useState("");
@@ -28,6 +33,8 @@ const Header = () => {
   ]);
 
   const [openDate, setOpenDate] = useState(false);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
@@ -35,6 +42,19 @@ const Header = () => {
         ...prev,
         [name]: operation === "inc" ? options[name] + 1 : options[name] - 1,
       };
+    });
+  };
+
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
+      date: JSON.stringify(date),
+      destination,
+      options: JSON.stringify(options),
+    });
+    setSearchParams(encodedParams);
+    navigate({
+      pathname: "/hotels",
+      search: encodedParams.toString(),
     });
   };
 
@@ -57,14 +77,17 @@ const Header = () => {
         <div className="headerSearchItem">
           <HiCalendar className="headerIcon dateIcon" />
           <div onClick={() => setOpenDate(!openDate)} className="dateDropDown">
-           {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")} `}
+            {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+              date[0].endDate,
+              "MM/dd/yyyy"
+            )} `}
           </div>
           {openDate && (
             <DateRange
               onChange={(item) => setDate([item.selection])}
               ranges={date}
               className="date"
-              minDate ={new Date()}
+              minDate={new Date()}
               moveRangeOnFirstSelection={true}
             />
           )}
@@ -85,7 +108,7 @@ const Header = () => {
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <button className="headerSearchBtn">
+          <button className="headerSearchBtn" onClick={handleSearch}>
             <HiSearch className="headerIcon" />
           </button>
         </div>
