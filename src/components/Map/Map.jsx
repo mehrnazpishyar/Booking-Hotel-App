@@ -11,7 +11,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import useGeoLocation from "../../hooks/useGeoLocation";
 
 const Map = ({ markerLocations }) => {
-  const [mapCenter, setMapCenter] = useState([20, 4]);
+  const [mapCenter, setMapCenter] = useState([50, 4]);
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
