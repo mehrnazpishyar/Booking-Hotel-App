@@ -1368,6 +1368,24 @@
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
       "id": 8
+    },
+    {
+      "cityName": "Mahidasht",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.330805638443735",
+      "longitude": "46.71524047851563",
+      "host_location": "Mahidasht Iran (Islamic Republic of)",
+      "id": 9
+    },
+    {
+      "cityName": "Kermanshah",
+      "country": "Iran (Islamic Republic of)",
+      "countryCode": "IR",
+      "latitude": "34.522886141322125",
+      "longitude": "47.00431823730469",
+      "host_location": "Kermanshah Iran (Islamic Republic of)",
+      "id": 10
     }
   ]
 }

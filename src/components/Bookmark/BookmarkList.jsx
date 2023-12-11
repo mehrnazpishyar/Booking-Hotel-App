@@ -1,12 +1,12 @@
 import ReactCountryFlag from "react-country-flag";
-import Loader from "../Loader/Loader";
+// import Loader from "../Loader/Loader";
 import { useBookmark } from "../context/BookmarkListContext";
 import { Link } from "react-router-dom";
 
 const BookmarkList = () => {
-  const { isLoading, bookmarks,currentBookmark } = useBookmark();
+  const {  bookmarks,currentBookmark } = useBookmark();
 
-  if (isLoading) return <Loader />;
+  // if (isLoading) return <Loader />;
   return (
     <div>
       <h2>BookmarkList</h2>
