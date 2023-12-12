@@ -8,6 +8,7 @@ import useOutsideClick from "../../hooks/useOutsideClick";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
+import { PiDotOutlineFill } from "react-icons/pi";
 import { format } from "date-fns";
 import {
   NavLink,
@@ -99,9 +100,9 @@ const Header = () => {
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <div id="optionDropDown" onClick={() => setOpenOptions(!openOptions)}>
-            {options.adult} adult . {options.children} children. {options.room}
-            room
+          <div className="searchOption" onClick={() => setOpenOptions(!openOptions)}>
+            <span >{options.adult} adult</span><PiDotOutlineFill className="dot"/> <span className="searchOption">{options.children}children</span><PiDotOutlineFill className="dot"/><span className="searchOption">{options.room}
+            room</span> 
           </div>
           {openOptions && (
             <GuestOptionList
@@ -113,9 +114,9 @@ const Header = () => {
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <button className="headerSearchBtn" onClick={handleSearch}>
+          <div className="headerSearchBtn" onClick={handleSearch}>
             <HiSearch className="headerIcon" />
-          </button>
+          </div>
         </div>
       </div>
       <User />

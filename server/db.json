@@ -1323,5 +1323,15 @@
       ]
     }
   ],
-  "bookmarks": []
+  "bookmarks": [
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "countryCode": "ES",
+      "latitude": "40.41701210359776",
+      "longitude": "-3.698959350585938",
+      "host_location": "Madrid Spain",
+      "id": 1
+    }
+  ]
 }

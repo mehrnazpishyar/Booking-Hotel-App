@@ -26,7 +26,7 @@ const SingleBookmark = () => {
         &larr; Back
       </button>
       <h2>{currentBookmark.cityName}</h2>
-      <div className={"bookmarkItem"}>
+      <div className="bookmarkItem">
                 <ReactCountryFlag svg countryCode={currentBookmark.countryCode} />
                 &nbsp; <strong>{currentBookmark.cityName}</strong> &nbsp;
                 <span>{currentBookmark.country}</span>
