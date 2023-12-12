@@ -1,5 +1,5 @@
 import { MdLocationOn } from "react-icons/md";
-import { HiCalendar } from "react-icons/hi";
+import { HiCalendar, HiLogout } from "react-icons/hi";
 import { HiMinus } from "react-icons/hi";
 import { HiPlus } from "react-icons/hi";
 import { HiSearch } from "react-icons/hi";
@@ -10,14 +10,18 @@ import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import {
+  NavLink,
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [destination, setDestination] = useState(searchParams.get("destination") || "");
+  const [destination, setDestination] = useState(
+    searchParams.get("destination") || ""
+  );
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     adult: 1,
@@ -35,7 +39,6 @@ const Header = () => {
 
   const [openDate, setOpenDate] = useState(false);
   const navigate = useNavigate();
-
 
   const handleOptions = (name, operation) => {
     setOptions((prev) => {
@@ -61,6 +64,7 @@ const Header = () => {
 
   return (
     <div className="header">
+      <NavLink to="/bookmark">Bookmarks</NavLink>
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
@@ -114,6 +118,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      <User />
     </div>
   );
 };
@@ -167,6 +172,30 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
           <HiPlus className="icon" />
         </button>
       </div>
+    </div>
+  );
+}
+
+function User() {
+  const navigate = useNavigate()
+  const { user, isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/')
+  };
+  return (
+    <div>
+      {isAuthenticated ? (
+        <div>
+          <div>{user.name}</div>
+          <button>
+            <HiLogout onClick={handleLogout} className="icon" />
+          </button>
+        </div>
+      ) : (
+        <NavLink to="/login">login</NavLink>
+      )}
     </div>
   );
 }
