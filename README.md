@@ -1,5 +1,5 @@
 Booking Hotel App
 
-Demo-project for hotel booking app made with React.js
+Demo-project for booking hotel app made with React.js
 
 
