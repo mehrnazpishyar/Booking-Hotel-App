@@ -1,7 +1,7 @@
 import useFetch from "../../hooks/useFetch";
 
 const LocationList = () => {
-  const { data, isLoading } = useFetch("http://localhost:5000/hotels", "");
+  const { data, isLoading } = useFetch("https://booking-hotel-app.onrender.com/hotels", "");
 
   if (isLoading) <p>loading ...</p>;
 
