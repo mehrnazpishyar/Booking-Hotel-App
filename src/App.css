@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 .headerSearch {
   display: flex;
@@ -12,10 +11,10 @@
   max-width: 900px;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   border: 1px solid #ebe9e9;
   border-radius: 1.5rem;
   padding: 1rem;
+  margin: 0 5px;
   
 }
 
@@ -278,6 +277,26 @@
   align-items: stretch;
 }
 
+@media screen and (max-width: 768px) {
+  .appLayout {
+   
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .sidebar {
+    width: 100% !important;
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    width: 50%;
+  }
+}
+
 .sidebar {
   width: 35%;
   overflow-y: scroll;
@@ -289,11 +308,6 @@
   border-radius: 1rem;
 }
 
-@media screen and (min-width: 768px) {
-  .sidebar {
-    width: 50%;
-  }
-}
 
 /* bookmark page */
 .bookmarkList {
@@ -395,4 +409,16 @@ a.active {
   height: 1.1rem;
 }
 
+.log{
+  display: flex;
+  flex-direction: column;
+}
 
+
+@media screen and (max-width:768px){
+  .roomDetail img{
+    width: 40%;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+}

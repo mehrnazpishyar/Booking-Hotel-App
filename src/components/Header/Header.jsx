@@ -65,7 +65,6 @@ const Header = () => {
 
   return (
     <div className="header">
-      <NavLink to="/bookmark">Bookmarks</NavLink>
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
@@ -186,7 +185,7 @@ function User() {
     navigate('/')
   };
   return (
-    <div>
+    <div className="log">
       {isAuthenticated ? (
         <div>
           <div>{user.name}</div>
@@ -196,7 +195,10 @@ function User() {
         </div>
       ) : (
         <NavLink to="/login">login</NavLink>
+       
+
       )}
+       <NavLink to="/bookmark">Bookmarks</NavLink>
     </div>
   );
 }
