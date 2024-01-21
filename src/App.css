@@ -124,6 +124,7 @@
 @media screen and (max-width: 768px) {
   .headerSearch {
     flex-direction: column;
+    padding: 0px;
   }
 
   .headerSearchItem {
@@ -137,6 +138,7 @@
   .seperator{
    visibility: hidden;
   }
+ 
 
 }
 
@@ -239,8 +241,13 @@
 
 .searchList .searchItem {
   display: flex;
-  gap: 1rem;
 }
+
+.searchItemDesc{
+  margin-left: 1rem;
+  text-align: left;
+}
+
 .searchList .searchItem img {
   width: 6rem;
   height: 6rem;
@@ -272,35 +279,26 @@
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 130px);
-  /* background-color: var(--text-100); */
-  align-items: stretch;
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
   .appLayout {
-   
     display: flex;
     flex-direction: column;
-    text-align: center;
   }
+  
   .sidebar {
     width: 100% !important;
+    padding-right: 0 !important;
   }
 
-}
-
-
-@media screen and (min-width: 768px) {
-  .sidebar {
-    width: 50%;
-  }
 }
 
 .sidebar {
   width: 35%;
   overflow-y: scroll;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 
 .searchItem.current-hotel {
@@ -407,18 +405,36 @@ a.active {
   color: var(--rose-500);
   width: 1.1rem;
   height: 1.1rem;
+
 }
 
 .log{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.log div {
+  display: flex;
+}
+
+.log .user_name{
+  padding-right: 5px;
+}
+
+.log button {
+  padding-top: 3px;
 }
 
 
 @media screen and (max-width:768px){
+.roomDetail{
+  text-align: center;
+}
+
   .roomDetail img{
-    width: 40%;
+    width: 100%;
     margin-bottom: 10px;
-    justify-content: center;
+    /* justify-content: center; */
   }
 }

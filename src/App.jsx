@@ -15,6 +15,7 @@ import AddNewBookmark from "./components/AddNewBookmark/AddNewBookmark";
 import Login from "./components/Login/Login";
 import AuthProvider from "./components/context/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import User from "./components/User/User";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <BookmarkListProvider>
         <HotelsProvider>
           <Toaster />
+          <User/>
           <Header />
           {/* <LocationList /> */}
           <Routes>
