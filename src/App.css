@@ -298,7 +298,7 @@
 .sidebar {
   width: 35%;
   overflow-y: scroll;
-  margin-right: 1rem;
+  padding-right: 1rem;
 }
 
 .searchItem.current-hotel {
