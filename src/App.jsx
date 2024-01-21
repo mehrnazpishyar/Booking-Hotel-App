@@ -17,6 +17,8 @@ import AuthProvider from "./components/context/AuthProvider";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
+
+
   return (
     <AuthProvider>
       <BookmarkListProvider>

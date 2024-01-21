@@ -1,7 +1,31 @@
-import useFetch from "../../hooks/useFetch";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 const LocationList = () => {
-  const { data, isLoading } = useFetch("https://booking-hotel-app.onrender.com/hotels", "");
+
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const url = "https://booking-hotel-app.onrender.com/hotels"
+  const query = ""
+  
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setIsLoading(true);
+        const { data } = await axios.get(`${url}?${query}`);
+        setData(data);
+      } catch (err) {
+        setData([]);
+        toast.error(err?.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    fetchData();
+  }, [query, url]);
 
   if (isLoading) <p>loading ...</p>;
 
