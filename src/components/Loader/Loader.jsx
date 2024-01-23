@@ -6,9 +6,8 @@ function Loader() {
       style={{
         color: "var(--primary-600)",
         display: "flex",
-        alignItems: "center",
-        gap: "1rem",
-        margin: "1rem auto",
+        justifyContent:"center",
+        margin: "10rem auto",
       }}
     >
       <p> Loading Data...</p>
