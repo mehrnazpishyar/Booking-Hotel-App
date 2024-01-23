@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
+import Loader from '../Loader/Loader'
 
 const LocationList = () => {
 
@@ -27,7 +28,9 @@ const LocationList = () => {
     fetchData();
   }, [query, url]);
 
-  if (isLoading) <p>loading ...</p>;
+  
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className="nearbyLocations">
