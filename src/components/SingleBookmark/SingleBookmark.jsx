@@ -22,7 +22,6 @@ const SingleBookmark = () => {
   return (
     <div>
       <button onClick={handleBack} className="btn btn--back">
-        {" "}
         &larr; Back
       </button>
       <h2>{currentBookmark.cityName}</h2>

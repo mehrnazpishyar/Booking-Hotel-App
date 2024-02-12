@@ -15,7 +15,6 @@
   border-radius: 1.5rem;
   padding: 1rem;
   margin: 0 5px;
-  
 }
 
 .headerSearchInput {
@@ -120,7 +119,6 @@
   border-radius: 1rem;
 }
 
-
 @media screen and (max-width: 768px) {
   .headerSearch {
     flex-direction: column;
@@ -131,15 +129,12 @@
     margin-bottom: 10px;
   }
 
-  
-  .locationIcon{
+  .locationIcon {
     margin-left: 50px;
   }
-  .seperator{
-   visibility: hidden;
+  .seperator {
+    visibility: hidden;
   }
- 
-
 }
 
 /*  location list */
@@ -189,6 +184,7 @@
 /* room detail */
 .room {
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
   gap: 1rem;
@@ -209,6 +205,34 @@
   border-radius: 0.8rem;
 }
 
+.room-book {
+  display: flex;
+  justify-content: center;
+}
+
+.room-book button {
+  border: 1px solid var(--primary-600);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var( --primary-700);
+  color: white;
+}
+
+.room-book button:hover{
+  background-color: var( --primary-600); 
+  transition: 0.2s;
+}
+
+.back-hotel:hover{
+  color: var(--primary-700);
+}
+
+.booking{
+  text-align: center;
+  letter-spacing: 1px;
+  color: var(--primary-700);
+}
 /* map */
 
 .mapContainer {
@@ -243,7 +267,7 @@
   display: flex;
 }
 
-.searchItemDesc{
+.searchItemDesc {
   margin-left: 1rem;
   text-align: left;
 }
@@ -287,16 +311,15 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .sidebar {
     width: 100% !important;
     padding-right: 0 !important;
   }
-
 }
 
 .sidebar {
-  width: 35%;
+  width: 30%;
   overflow-y: scroll;
   padding-right: 1rem;
 }
@@ -306,11 +329,11 @@
   border-radius: 1rem;
 }
 
-
 /* bookmark page */
 .bookmarkList {
   margin-top: 1rem;
 }
+
 .bookmarkItem {
   margin-bottom: 1rem;
   border: 1px solid var(--text-400);
@@ -327,7 +350,7 @@
 }
 
 .currentBookmark h2 {
-  margin: 1rem 0;
+  margin-top: 1.5rem;
 }
 
 .bookmarkItem .trash {
@@ -371,7 +394,7 @@
 }
 
 .btn--back {
-  border: 1px solid var(--text-400);
+  border: 1px solid var(--primary-600);
 }
 
 .formControl .flag {
@@ -385,55 +408,43 @@ a.active {
   font-weight: 700;
 }
 
-.loginContainer {
-  margin: 2rem auto;
-  max-width: 25rem;
-  border: 1px solid var(--text-300);
-  padding: 1rem;
-  border-radius: 1rem;
-}
+.log {
 
-.loginContainer button {
-  width: 100%;
-}
-
-.loginContainer h2 {
-  margin-bottom: 1rem;
-}
-
-.icon.logout {
-  color: var(--rose-500);
-  width: 1.1rem;
-  height: 1.1rem;
-
-}
-
-.log{
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 1rem;
+  margin-left: 20px;
+  border: 1px solid gray;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .log div {
   display: flex;
 }
 
-.log .user_name{
+.log .user_name {
   padding-right: 5px;
 }
 
-.log button {
+
+.log a:hover {
   padding-top: 3px;
+ 
 }
 
+.log:hover {
+  background-color: var(--primary-600);
+  transition: 0.2s;
+  color: white;
 
-@media screen and (max-width:768px){
-.roomDetail{
-  text-align: center;
 }
 
-  .roomDetail img{
-    width: 100%;
+@media screen and (max-width: 768px) {
+  .roomDetail {
+    text-align: center;
+  }
+
+  .roomDetail img {
+    width: 250px;
     margin-bottom: 10px;
     /* justify-content: center; */
   }

@@ -44,6 +44,9 @@ const BookmarkList = () => {
           );
         })}
       </div>
+      <Link to="/hotels">
+        <button className="btn back-hotel">&larr; Back</button>
+      </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { MdLocationOn } from "react-icons/md";
-import { HiCalendar, HiLogout } from "react-icons/hi";
+import { HiCalendar } from "react-icons/hi";
 import { HiMinus } from "react-icons/hi";
 import { HiPlus } from "react-icons/hi";
 import { HiSearch } from "react-icons/hi";
@@ -11,12 +11,11 @@ import { DateRange } from "react-date-range";
 import { PiDotOutlineFill } from "react-icons/pi";
 import { format } from "date-fns";
 import {
-  NavLink,
+  Link,
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-
 
 const Header = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -65,7 +64,6 @@ const Header = () => {
 
   return (
     <div className="header">
-    
       <div className="headerSearch">
         <div className="headerSearchItem">
           <MdLocationOn className="headerIcon locationIcon" />
@@ -100,9 +98,18 @@ const Header = () => {
           <span className="seperator"></span>
         </div>
         <div className="headerSearchItem">
-          <div className="searchOption" onClick={() => setOpenOptions(!openOptions)}>
-            <span >{options.adult} adult</span><PiDotOutlineFill className="dot"/> <span className="searchOption">{options.children}children</span><PiDotOutlineFill className="dot"/><span className="searchOption">{options.room}
-            room</span> 
+          <div
+            className="searchOption"
+            onClick={() => setOpenOptions(!openOptions)}
+          >
+            <span>{options.adult} adult</span>
+            <PiDotOutlineFill className="dot" />{" "}
+            <span className="searchOption">{options.children}children</span>
+            <PiDotOutlineFill className="dot" />
+            <span className="searchOption">
+              {options.room}
+              room
+            </span>
           </div>
           {openOptions && (
             <GuestOptionList
@@ -118,6 +125,9 @@ const Header = () => {
             <HiSearch className="headerIcon" />
           </div>
         </div>
+      </div>
+      <div className="log">
+        <Link to="/bookmark">Bookmarks</Link>
       </div>
     </div>
   );
@@ -175,5 +185,3 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
     </div>
   );
 }
-
-
